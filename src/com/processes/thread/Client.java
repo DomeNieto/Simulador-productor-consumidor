@@ -1,6 +1,7 @@
 package com.processes.thread;
 
 import com.processes.store.Store;
+import com.processes.util.Colors;
 
 public class Client extends Thread {
 
@@ -22,12 +23,12 @@ public class Client extends Thread {
             for (int i = 0; i < amount; i++) {
                 Thread.sleep((int) (Math.random() * 1000));
                 store.consumes(name);
-                System.out.println("The client " + this.name + " has consumed: " + (i + 1));
+                System.out.println(Colors.ANSI_GREEN + "\t!! " + "The client " + this.name + " has consumed: " + (i + 1)  + Colors.ANSI_RESET);
             }
 
-            System.out.println("The client " + this.name + " has cosumed all their veggies.");
+            System.out.println(Colors.ANSI_GREEN + "\t-> " + "The client " + this.name + " has consumed all their veggies." + Colors.ANSI_RESET);
         } catch (InterruptedException e) {
-            System.out.println("Error Interrupted Exception");
+            System.out.println(Colors.ANSI_RED + "Error Interrupted Exception" + Colors.ANSI_RESET);
         }
     }
 }

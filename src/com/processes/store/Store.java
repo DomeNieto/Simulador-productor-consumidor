@@ -28,14 +28,15 @@ public class Store {
         System.out.println("The storage status: " + storage.size() + "\n");
     }
 
-    public synchronized void collect() {
-        while (this.limit <= 0) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                System.err.println("Hilo interrumpido durante la espera.");
-            }
+    public synchronized void consumes(String client) throws InterruptedException {
+
+        while (storage.isEmpty()) {
+            System.out.println(client + " has to wait, there are no vegetables available in stock");
+            wait();
         }
-        this.limit--;
+
+        String vegetable = storage.remove(0);
+        System.out.println(client + " consumed: " + vegetable);
+        notifyAll();
     }
 }

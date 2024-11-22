@@ -1,4 +1,4 @@
-package com.processes.consumer;
+package com.processes.thread;
 
 import com.processes.store.Store;
 
@@ -24,6 +24,7 @@ public class Client extends Thread {
                 store.consumes(name);
                 System.out.println("The client " + this.name + " has consumed: " + (i + 1));
             }
+
             System.out.println("The client " + this.name + " has cosumed all their veggies.");
         } catch (InterruptedException e) {
             System.out.println("Error Interrupted Exception");

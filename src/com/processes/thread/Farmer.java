@@ -1,6 +1,7 @@
 package com.processes.thread;
 
 import com.processes.store.Store;
+import com.processes.util.Colors;
 
 public class Farmer extends Thread {
 
@@ -28,7 +29,8 @@ public class Farmer extends Thread {
                 int growthTime = getGrowthTime();
 
                 sleep(growthTime * 1000);
-                System.out.println("\n\nThe vegetable: " + vegetable + ", took " + growthTime + " seconds to grow.");
+                System.out.println(Colors.ANSI_YELLOW + "________________________________________________________________________________" + "\n" +  Colors.ANSI_RESET);
+                System.out.println("The vegetable: " + vegetable + ", took " + growthTime + " seconds to grow.");
 
                 store.deposit(vegetable, this.name);
 

@@ -7,7 +7,7 @@ public class Farmer extends Thread {
 
     private String name;
     private Store store;
-    private final Integer AMOUNT_OF_VEGETABLES = 10;
+    private final Integer AMOUNT_OF_VEGETABLES = 5;
     private final String[] VEGETABLES = { " lettuce", "cabbage", "onion", "spinach", "potato", "celery", "asparagus",
             "radish", "broccoli", "artichoke", "tomato", "cucumber", "eggplant", "carrot", "green bean" };
 

@@ -21,12 +21,14 @@ public class Client extends Thread {
     public void run() {
         try {
             for (int i = 0; i < amount; i++) {
-                Thread.sleep((int) (Math.random() * 1000));
+                Thread.sleep((int) (Math.random() * 10000));
                 store.consumes(name);
-                System.out.println(Colors.ANSI_GREEN + "\t!! " + "The client " + this.name + " has consumed: " + (i + 1)  + Colors.ANSI_RESET);
+                System.out.println(Colors.ANSI_GREEN + "\t!! " + "The client " + this.name + " has consumed: " + (i + 1)
+                        + Colors.ANSI_RESET);
             }
 
-            System.out.println(Colors.ANSI_GREEN + "\t-> " + "The client " + this.name + " has consumed all their veggies." + Colors.ANSI_RESET);
+            System.out.println(Colors.ANSI_GREEN + "\t-> " + "The client " + this.name
+                    + " has consumed all their veggies." + Colors.ANSI_RESET);
         } catch (InterruptedException e) {
             System.out.println(Colors.ANSI_RED + "Error Interrupted Exception" + Colors.ANSI_RESET);
         }

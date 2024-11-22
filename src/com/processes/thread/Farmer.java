@@ -17,7 +17,7 @@ public class Farmer extends Thread {
     }
 
     private int getGrowthTime() {
-        return (int) Math.floor(Math.random() * (AMOUNT_OF_VEGETABLES)) + 1;
+        return (int) Math.floor(Math.random() * 2) + 1;
     }
 
     @Override
@@ -29,7 +29,9 @@ public class Farmer extends Thread {
                 int growthTime = getGrowthTime();
 
                 sleep(growthTime * 1000);
-                System.out.println(Colors.ANSI_YELLOW + "________________________________________________________________________________" + "\n" +  Colors.ANSI_RESET);
+                System.out.println(Colors.ANSI_YELLOW
+                        + "________________________________________________________________________________" + "\n"
+                        + Colors.ANSI_RESET);
                 System.out.println("The vegetable: " + vegetable + ", took " + growthTime + " seconds to grow.");
 
                 store.deposit(vegetable, this.name);

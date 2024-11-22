@@ -6,7 +6,7 @@ public class Farmer extends Thread {
 
     private String name;
     private Store store;
-    private final Integer AMOUNT_OF_VEGETABLES = 20;
+    private final Integer AMOUNT_OF_VEGETABLES = 10;
     private final String[] VEGETABLES = { " lettuce", "cabbage", "onion", "spinach", "potato", "celery", "asparagus",
             "radish", "broccoli", "artichoke", "tomato", "cucumber", "eggplant", "carrot", "green bean" };
 
@@ -28,7 +28,7 @@ public class Farmer extends Thread {
                 int growthTime = getGrowthTime();
 
                 sleep(growthTime * 1000);
-                System.out.println("The vegetable: " + vegetable + ", took " + growthTime + "seconds to grow.");
+                System.out.println("\n\nThe vegetable: " + vegetable + ", took " + growthTime + " seconds to grow.");
 
                 store.deposit(vegetable, this.name);
 

@@ -14,6 +14,12 @@ public class App {
         Client gentleman = new Client(store, "Mr.Gentleman", 10);
         Client loquendo = new Client(store, "Loquendo", 5);
 
+        paco.setPriority(Thread.MAX_PRIORITY);
+        ramon.setPriority(Thread.MAX_PRIORITY);
+        faustino.setPriority(Thread.MIN_PRIORITY);
+        gentleman.setPriority(Thread.MIN_PRIORITY);
+        loquendo.setPriority(Thread.MIN_PRIORITY);
+
         paco.start();
         ramon.start();
 
@@ -31,8 +37,12 @@ public class App {
             e.printStackTrace();
         }
 
-        System.out.println(Colors.ANSI_YELLOW + "\n" + "________________________________________________________________________________" +  Colors.ANSI_RESET);
-        System.out.println(Colors.ANSI_YELLOW + "________________________________________________________________________________" +  Colors.ANSI_RESET);
+        System.out.println(Colors.ANSI_YELLOW + "\n"
+                + "________________________________________________________________________________"
+                + Colors.ANSI_RESET);
+        System.out.println(
+                Colors.ANSI_YELLOW + "________________________________________________________________________________"
+                        + Colors.ANSI_RESET);
         System.out.println(Colors.ANSI_YELLOW + "\t\t\t\t" + "Store Closed" + Colors.ANSI_RESET);
     }
 }

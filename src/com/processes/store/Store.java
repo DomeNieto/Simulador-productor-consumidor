@@ -9,8 +9,8 @@ public class Store {
     private int limit;
     private final List<String> storage;
 
-    public Store() {
-        this.limit = 10;
+    public Store(int limit) {
+        this.limit = limit;
         this.storage = new ArrayList<>();
     }
 

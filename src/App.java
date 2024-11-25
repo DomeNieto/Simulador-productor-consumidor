@@ -5,10 +5,10 @@ import com.processes.util.Colors;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Store store = new Store();
+        Store store = new Store(10);
 
-        Farmer paco = new Farmer("Paco", store);
-        Farmer ramon = new Farmer("Ramon", store);
+        Farmer paco = new Farmer("Paco", store, 10);
+        Farmer ramon = new Farmer("Ramon", store, 10);
 
         Client faustino = new Client(store, "Faustino", 5);
         Client gentleman = new Client(store, "Mr.Gentleman", 10);

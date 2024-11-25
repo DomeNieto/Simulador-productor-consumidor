@@ -7,23 +7,25 @@ public class Farmer extends Thread {
 
     private String name;
     private Store store;
-    private final Integer AMOUNT_OF_VEGETABLES = 10;
+    private int amountOfVegetables;
+
     private final String[] VEGETABLES = { " lettuce", "cabbage", "onion", "spinach", "potato", "celery", "asparagus",
             "radish", "broccoli", "artichoke", "tomato", "cucumber", "eggplant", "carrot", "green bean" };
 
-    public Farmer(String name, Store store) {
+    public Farmer(String name, Store store, int amountOfVegetables) {
         this.name = name;
         this.store = store;
+        this.amountOfVegetables = amountOfVegetables;
     }
 
     private int getGrowthTime() {
-        return (int) Math.floor(Math.random() * (AMOUNT_OF_VEGETABLES)) + 1;
+        return (int) Math.floor(Math.random() * (amountOfVegetables)) + 1;
     }
 
     @Override
     public void run() {
 
-        for (int i = 0; i < AMOUNT_OF_VEGETABLES; i++) {
+        for (int i = 0; i < this.amountOfVegetables; i++) {
             try {
                 String vegetable = VEGETABLES[(int) (Math.random() * VEGETABLES.length)];
                 int growthTime = getGrowthTime();

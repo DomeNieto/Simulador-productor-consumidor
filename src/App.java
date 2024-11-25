@@ -7,9 +7,9 @@ public class App {
 
     public static void main(String[] args) {
         
-        Store store = new Store();
+        Store store = new Store(5);
 
-        Farmer paco = new Farmer("Paco", store);
+        Farmer paco = new Farmer("Paco", store, 5);
 
         Client faustino = new Client(store, "Faustino", 5);
 

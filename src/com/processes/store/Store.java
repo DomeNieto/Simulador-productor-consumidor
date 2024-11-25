@@ -9,8 +9,8 @@ public class Store {
     private int limit;
     private final List<String> storage;
 
-    public Store() {
-        this.limit = 10;
+    public Store(int limit) {
+        this.limit = limit;
         this.storage = new ArrayList<>();
     }
 
@@ -26,15 +26,19 @@ public class Store {
         storage.add(vegetable);
         notifyAll();
 
-        System.out.println(Colors.ANSI_GREEN + "The farmer " + nameFarmer + " has added a(n) " + vegetable + " into the store." + Colors.ANSI_RESET);
+        System.out.println(Colors.ANSI_GREEN + "The farmer " + nameFarmer + " has added a(n) " + vegetable
+                + " into the store." + Colors.ANSI_RESET);
         System.out.println(Colors.ANSI_CYAN + "The storage status: " + storage.size() + Colors.ANSI_RESET);
-        System.out.println(Colors.ANSI_YELLOW + "________________________________________________________________________________" + "\n" +  Colors.ANSI_RESET);
+        System.out.println(
+                Colors.ANSI_YELLOW + "________________________________________________________________________________"
+                        + "\n" + Colors.ANSI_RESET);
     }
 
     public synchronized void consumes(String client) throws InterruptedException {
 
         while (storage.isEmpty()) {
-            System.out.println(Colors.ANSI_RED + "\t-> " + client + " has to wait, there are no vegetables available in stock." + Colors.ANSI_RESET);
+            System.out.println(Colors.ANSI_RED + "\t-> " + client
+                    + " has to wait, there are no vegetables available in stock." + Colors.ANSI_RESET);
             wait();
         }
 
